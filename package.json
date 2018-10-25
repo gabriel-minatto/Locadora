@@ -1,0 +1,33 @@
+{
+  "name": "locadora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "nodemon": "nodemon --inspect=0.0.0.0:8080 index.js"
+  },
+  "keywords": [
+    "locadora",
+    "filmes",
+    "api"
+  ],
+  "author": "Gabriel Minatto",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.2",
+    "express-validator": "^4.3.0",
+    "jwt-simple": "^0.5.5",
+    "md5": "^2.2.1",
+    "mysql2": "^1.6.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "restify": "^6.3.4",
+    "restify-clients": "^1.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
