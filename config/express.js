@@ -3,6 +3,7 @@ const consign = require('consign');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const auth = require("./../middlewares/auth")();
+const errorHandler = require("./../middlewares/error");
 
 
 module.exports = function(){
@@ -19,6 +20,7 @@ module.exports = function(){
     //carregamos dependencias e endpoints publicos
     consign({cwd: '/app/config'})
         .include('./connectionFactory.js')
+        .then('./customError.js')
         .into(app);
 
     consign()
@@ -41,6 +43,14 @@ module.exports = function(){
     consign()
         .include('controllers/private')
         .into(app);
+
+    //modulo para tratamento customizado de erros
+    app.use(errorHandler);
+
+    app.use(function(req,res,next) {
+        res.status(404).json({ "error": "Rota não encontrada"});
+        next();
+    });
 
     return app;
 };

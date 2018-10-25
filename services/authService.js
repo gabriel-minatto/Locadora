@@ -24,7 +24,7 @@ module.exports = function(app) {
 
             let [user, ] = await Users.login(email, password);
 
-            if(!user || !user.length) return false;
+            if(!user || !user.length || !user[0].id) return false;
 
             user = user[0];
 

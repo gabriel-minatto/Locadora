@@ -6,11 +6,8 @@ class Users {
     }
 
     async insert(user) {
-        return await this._connection.promise().query('INSERT INTO users SET ?', user);
-    }
 
-    async findAll() {
-        return await this._connection.promise().query('select * from users');
+        return await this._connection.promise().query('insert into users SET ?', user);
     }
 
     async login(email, password) {
