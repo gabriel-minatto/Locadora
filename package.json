@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "nodemon": "nodemon --inspect=0.0.0.0:8080 index.js"
+    "nodemon": "nodemon --inspect=0.0.0.0:8080 index.js",
+    "apidocs": "apidoc -i controllers/ -o docs/"
   },
   "keywords": [
     "locadora",
@@ -14,6 +15,7 @@
   "author": "Gabriel Minatto",
   "license": "ISC",
   "dependencies": {
+    "apidoc": "^0.17.6",
     "body-parser": "^1.18.2",
     "consign": "^0.1.6",
     "dotenv": "^6.1.0",
